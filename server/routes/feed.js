@@ -11,8 +11,13 @@ fs.readFile('feeds.config', 'utf8', (err, data) => {
   feedUrl = data.replace(/\r|\n/g, '')
   feedUrl = feedUrl.split(',')
 })
-router.get('/', async (req, res) => {
-  res.json(await parser.parseURL('https://lenta.ru/rss'))
+
+router.get('/', (req, res) => {
+  res.json(feedUrl)
+})
+
+router.post('/', async (req, res) => {
+  res.json(await parser.parseURL(req.body.url))
 })
 
 module.exports = router

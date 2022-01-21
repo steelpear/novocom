@@ -1,5 +1,5 @@
 <template>
-  <v-row justify="center" align="center">
+  <v-row justify="center" align="start">
     <!-- eslint-disable-next-line vue/require-v-for-key -->
     <div v-for="item in feed.items">
       <v-hover
@@ -61,11 +61,16 @@ export default {
     }
   },
   mounted () {
-    this.getFeed()
+    this.getFeeds()
   },
   methods: {
-    async getFeed () {
+    async getFeeds () {
       const response = await this.$axios.get(process.env.VUE_APP_SERVER + '/api/feed')
+      const feedsList = response.data
+      this.getFeed(feedsList[0])
+    },
+    async getFeed (rss) {
+      const response = await this.$axios.post(process.env.VUE_APP_SERVER + '/api/feed', { url: rss })
       this.feed = response.data
     }
   }
