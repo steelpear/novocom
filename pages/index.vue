@@ -6,6 +6,9 @@
     <section class="mb-6">
       <sectionThree :items="feed2" />
     </section>
+    <section class="mb-6">
+      <sectionFour :items="feed3" />
+    </section>
     <section>
       <sectionTwo :items="feed" />
     </section>
@@ -19,7 +22,8 @@ export default {
     return {
       feed: [],
       feed1: [],
-      feed2: []
+      feed2: [],
+      feed3: []
     }
   },
   mounted () {
@@ -31,6 +35,7 @@ export default {
       this.feed = response.data.items
       this.feed1 = this.feed.splice(0, 6)
       this.feed2 = this.feed.splice(0, 8)
+      this.feed3 = this.feed.splice(0, 4)
     }
   }
 }
