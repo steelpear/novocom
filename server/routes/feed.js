@@ -9,15 +9,12 @@ let feedUrl = ''
 fs.readFile('feeds.config', 'utf8', (err, data) => {
   if (err) { console.log(err) }
   feedUrl = data.replace(/\r|\n/g, '')
-  feedUrl = feedUrl.split(',')
 })
 
-router.get('/', (req, res) => {
-  res.json(feedUrl)
-})
-
-router.post('/', async (req, res) => {
-  res.json(await parser.parseURL(req.body.url))
+router.get('/', async (req, res) => {
+  const arr = await parser.parseURL(feedUrl)
+  arr.items.length = 47
+  res.json(arr)
 })
 
 module.exports = router

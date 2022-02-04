@@ -1,8 +1,8 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - novocom',
-    title: 'novocom',
+    titleTemplate: '%s - Новости, комментарии, аналитика',
+    title: 'Novocom',
     htmlAttrs: {
       lang: 'ru'
     },
@@ -10,6 +10,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
+      { hid: 'keywords', name: 'keywords', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [

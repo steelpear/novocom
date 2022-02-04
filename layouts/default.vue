@@ -1,21 +1,25 @@
 <template>
   <v-app>
     <v-main>
-      <v-container>
+      <v-container class="py-8 mb-8">
         <Nuxt />
       </v-container>
     </v-main>
     <v-footer
       :absolute="!fixed"
       app
+      dark
+      color="#2c3b42"
+      :class="$vuetify.breakpoint.mobile ? 'pa-8' : 'py-10 px-16'"
     >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span>{{ new Date().getFullYear() }}</span>
+      <span>&ensp;&copy;&nbsp;Novocom.ru</span>
     </v-footer>
     <v-fab-transition>
       <v-btn
         v-if="!$vuetify.breakpoint.mobile"
         v-show="offsetTop > 5"
-        color="indigo"
+        :color="offsetTop === 100 ? 'white' : 'indigo'"
         fab
         icon
         outlined
