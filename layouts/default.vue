@@ -6,20 +6,35 @@
       </v-container>
     </v-main>
     <v-footer
-      :absolute="!fixed"
       app
       dark
+      absolute
       color="#2c3b42"
       :class="$vuetify.breakpoint.mobile ? 'pa-8' : 'py-10 px-16'"
     >
-      <span>{{ new Date().getFullYear() }}</span>
-      <span>&ensp;&copy;&nbsp;Novocom.ru</span>
+      <v-row justify="center" :class="{'text-center':$vuetify.breakpoint.xsOnly}">
+        <v-col cols="12" md="4" sm="5" xs="12" :class="{'pl-8' : $vuetify.breakpoint.mdAndUp}">
+          <p>&copy; {{ new Date().getFullYear() }} Novocom.ru</p>
+          <p>Вопросы и предложения: <a href="mailto:mail@novocom.ru">mail@novocom.ru</a></p>
+        </v-col>
+        <v-spacer />
+        <v-col cols="12" md="4" sm="5" xs="12" :class="{'pl-12' : $vuetify.breakpoint.mdAndUp}">
+          <v-row align="center" :justify="$vuetify.breakpoint.xsOnly ? 'center' : 'start'" class="ml-0 mb-4">
+            <div v-if="!$vuetify.breakpoint.mobile" class="mr-2">
+              Поделиться
+            </div>
+            <socialShare />
+          </v-row>
+          <p><a href="https://all-letters.ru/" target="_blank">Письма, благодарности, поздравления </a></p>
+          <p><a href="https://qr-generator.ru/" target="_blank">QR-Generator - Генератор QR-кодов онлайн</a></p>
+        </v-col>
+      </v-row>
     </v-footer>
     <v-fab-transition>
       <v-btn
         v-if="!$vuetify.breakpoint.mobile"
         v-show="offsetTop > 5"
-        :color="offsetTop === 100 ? 'white' : 'indigo'"
+        :color="offsetTop > 98 ? 'white' : 'indigo'"
         fab
         icon
         outlined
@@ -42,7 +57,6 @@ export default {
   name: 'DefaultLayout',
   data () {
     return {
-      fixed: false,
       offsetTop: 0
     }
   },
@@ -62,3 +76,10 @@ export default {
   }
 }
 </script>
+
+<style>
+  a {
+    color: inherit !important;
+    text-decoration: inherit;
+  }
+</style>

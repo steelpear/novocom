@@ -13,7 +13,7 @@ fs.readFile('feeds.config', 'utf8', (err, data) => {
 
 router.get('/', async (req, res) => {
   const arr = await parser.parseURL(feedUrl)
-  arr.items.length = 48
+  arr.items.length = 47
   res.json(arr)
 })
 

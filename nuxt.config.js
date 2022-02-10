@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - Новости, комментарии, аналитика',
+    titleTemplate: '%s - Последние новости - картина дня, политика, экономика, спорт и другие события',
     title: 'Novocom',
     htmlAttrs: {
       lang: 'ru'
@@ -9,12 +9,13 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { hid: 'keywords', name: 'keywords', content: '' },
+      { hid: 'description', name: 'description', content: 'Новости сегодня: самые важные и свежие новости России и мира.' },
+      { hid: 'keywords', name: 'keywords', content: 'новости, политика, экономика, спорт, шоу-бизнес, криминал' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' }
     ]
   },
 
@@ -24,6 +25,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/vue-masonry.js', ssr: false }
   ],
 
   env: {
@@ -45,7 +47,9 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'vue-social-sharing/nuxt'
+
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

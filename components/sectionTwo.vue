@@ -1,8 +1,11 @@
 <template>
-  <v-row justify="center" align="start">
-    <div
+  <v-row v-masonry justify="center" align="start" dense>
+    <v-col
       v-for="(item, i) in items"
       :key="i"
+      v-masonry-tile
+      cols="12"
+      md="4"
     >
       <v-hover
         v-slot="{ hover }"
@@ -40,13 +43,14 @@
             </v-card-title>
           </a>
           <v-card-text>
-            <div class="mb-4 text-body-1 text--secondary font-weight-regular grey--text text--darken-3">
+            <div class="mb-4 text-body-1 content font-weight-regular grey--text text--darken-3">
               {{ item.content }}
             </div>
           </v-card-text>
         </v-card>
       </v-hover>
-    </div>
+      </div>
+    </v-col>
   </v-row>
 </template>
 
@@ -67,4 +71,5 @@ export default {
     transition: all .5s;
     &:hover {color: #F57C00;}
   }
+  .content {line-height: 1.35em;}
 </style>
