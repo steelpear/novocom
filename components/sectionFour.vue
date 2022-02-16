@@ -5,6 +5,8 @@
       :key="i"
       cols="12"
       md="6"
+      sm="6"
+      xs="12"
     >
       <v-card
         v-if="item.enclosure"
@@ -13,14 +15,14 @@
         tile
       >
         <v-row justify="center" align="start" dense>
-          <v-col cols="12" md="6">
+          <v-col cols="12" md="6" sm="6" xs="6">
             <a :href="item.link" target="_blank" class="text-decoration-none">
-              <v-card-title class="feed_title py-0 text-h6">
+              <v-card-title class="feed_title py-0" :class="$vuetify.breakpoint.mdAndUp ? 'text-h6' : 'text-subtitle-1'">
                 {{ item.title }}
               </v-card-title>
             </a>
           </v-col>
-          <v-col cols="12" md="6" class="pa-0">
+          <v-col cols="12" md="6" sm="6" xs="6" class="pa-0">
             <v-img
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="150"

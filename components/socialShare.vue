@@ -12,7 +12,7 @@
       :twitter-user="sharing.twitterUser"
       class="mx-1"
     >
-      <v-icon size="30">
+      <v-icon>
         {{ network.icon }}
       </v-icon>
     </ShareNetwork>

@@ -6,13 +6,14 @@
       v-masonry-tile
       cols="12"
       md="4"
+      sm="6"
+      xs="12"
     >
       <v-hover
         v-slot="{ hover }"
         close-delay="100"
       >
         <v-card
-          v-if="item.enclosure"
           class="ma-2"
           max-width="374"
           :elevation="hover ? 8 : 2"
@@ -31,6 +32,7 @@
             :src="item.enclosure.url"
           >
             <v-chip
+              v-if="item.categories"
               class="ma-3"
               color="primary"
             >
