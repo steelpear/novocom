@@ -2,12 +2,12 @@
   <div>
     <section class="mb-6">
       <v-row justify="center" align="start" dense>
-        <v-col cols="12" md="10" xs="12">
+        <v-col cols="12" :md="$vuetify.breakpoint.lgAndUp ? '10' : '12'" xs="12">
           <sectionOne :items="feed1" />
         </v-col>
         <v-col v-if="$vuetify.breakpoint.lgAndUp" cols="12" md="2">
           <!-- eslint-disable-next-line vue/no-v-html -->
-          <div class="pt-2" v-html="ads[0]" />
+          <div class="pt-2 text-center" v-html="ads[0]" />
         </v-col>
       </v-row>
     </section>
