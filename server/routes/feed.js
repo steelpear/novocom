@@ -15,8 +15,8 @@ router.get('/', (req, res) => {
   })
 })
 
-router.get('/ads', async (req, res) => {
-  await fs.readFile('ads.config', 'utf8', (err, data) => {
+router.get('/ads', (req, res) => {
+  fs.readFile('ads.config', 'utf8', (err, data) => {
     if (err) { console.log(err) }
     res.json(data.split(','))
   })

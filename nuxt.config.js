@@ -9,6 +9,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'yandex-verification', content: '1febd1e12f6e4a1a' },
+      { name: 'google-site-verification', content: 'uHotevNmTJxxJIC-p3t6ZuzX5goTDUoNxhS9iWEa_v4' },
       { hid: 'description', name: 'description', content: 'Новости сегодня: самые важные и свежие новости России и мира.' },
       { hid: 'keywords', name: 'keywords', content: 'новости, политика, экономика, спорт, шоу-бизнес, криминал' },
       { name: 'format-detection', content: 'telephone=no' }
@@ -29,8 +31,8 @@ export default {
   ],
 
   env: {
-    VUE_APP_URL: process.env.NODE_ENV !== 'production' ? 'https://localhost:3000' : 'https://novocomm.ru',
-    VUE_APP_SERVER: process.env.NODE_ENV !== 'production' ? 'https://localhost:4001' : 'https://novocomm.ru:4001'
+    VUE_APP_URL: process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : 'https://novocomm.ru',
+    VUE_APP_SERVER: process.env.NODE_ENV !== 'production' ? 'http://localhost:4001' : 'https://novocomm.ru:4001'
   },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -48,9 +50,18 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    'vue-social-sharing/nuxt'
-
+    'vue-social-sharing/nuxt',
+    '@nuxtjs/yandex-metrika'
   ],
+
+  yandexMetrika: {
+    id: '87707227',
+    webvisor: true
+    // clickmap: false,
+    // useCDN: false,
+    // trackLinks: false,
+    // accurateTrackBounce: false
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
