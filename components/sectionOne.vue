@@ -46,7 +46,7 @@
           </v-img>
           <v-card-text>
             <div class="mb-4 text-body-1 content font-weight-regular grey--text text--lighten-1">
-              {{ item.content }}
+              {{ item.content.replace(/<[^>]+>/g,'').replace('Читать далее','') }}
             </div>
           </v-card-text>
         </v-card>

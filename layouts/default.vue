@@ -4,7 +4,7 @@
       <v-container class="pt-8">
         <v-row align="center" justify="center" :class="$vuetify.breakpoint.xsOnly ? 'text-center' : 'title-wrap'">
           <v-col class="text-h3 ml-1 font-weight-bold">
-            <span class="red--text text--darken-3">No</span><span class="blue--text text--darken-3">vo</span><span class="green--text text--darken-3">com</span><span class="red--text text--darken-3">.</span><span class="orange--text text--darken-3">ru</span>
+            <span class="red--text text--darken-3">No</span><span class="blue--text text--darken-3">vo</span><span class="green--text text--darken-3">comm</span><span class="red--text text--darken-3">.</span><span class="orange--text text--darken-3">ru</span>
             <span v-if="$vuetify.breakpoint.mdAndUp" class="text-caption">
               Последние новости, политика, экономика, происшествия, спорт, культура.
               <v-spacer />
@@ -26,8 +26,8 @@
       >
         <v-row justify="center" :class="{'text-center':$vuetify.breakpoint.xsOnly}">
           <v-col cols="12" md="4" sm="5" xs="12" :class="{'pl-8' : $vuetify.breakpoint.mdAndUp}">
-            <p>&copy; {{ new Date().getFullYear() }} Novocom.ru</p>
-            <p>Вопросы и предложения: <a href="mailto:mail@novocom.ru">mail@novocom.ru</a></p>
+            <p>&copy; {{ new Date().getFullYear() }} Novocomm.ru</p>
+            <p>Вопросы и предложения: <a href="mailto:mail@novocom.ru">mail@novocomm.ru</a></p>
           </v-col>
           <v-spacer />
           <v-col cols="12" md="4" sm="5" xs="12" :class="{'pl-12' : $vuetify.breakpoint.mdAndUp}">

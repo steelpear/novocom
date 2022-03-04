@@ -2,7 +2,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - Последние новости - картина дня, политика, экономика, спорт и другие события',
-    title: 'Novocom',
+    title: 'Novocomm',
     htmlAttrs: {
       lang: 'ru'
     },
@@ -29,8 +29,8 @@ export default {
   ],
 
   env: {
-    VUE_APP_URL: process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : 'https://novocom.ru',
-    VUE_APP_SERVER: process.env.NODE_ENV !== 'production' ? 'http://localhost:3001' : 'https://novocom:3001'
+    VUE_APP_URL: process.env.NODE_ENV !== 'production' ? 'https://localhost:3000' : 'https://novocomm.ru',
+    VUE_APP_SERVER: process.env.NODE_ENV !== 'production' ? 'https://localhost:4001' : 'https://novocomm.ru:4001'
   },
 
   // Auto import components: https://go.nuxtjs.dev/config-components

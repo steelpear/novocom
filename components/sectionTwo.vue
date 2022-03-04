@@ -46,7 +46,7 @@
           </a>
           <v-card-text>
             <div class="mb-4 text-body-1 content font-weight-regular grey--text text--darken-3">
-              {{ item.content }}
+              {{ item.content.replace(/<[^>]+>/g,'').replace('Читать далее','') }}
             </div>
           </v-card-text>
         </v-card>
