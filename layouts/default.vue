@@ -37,8 +37,15 @@
               </div>
               <socialShare />
             </v-row>
-            <p><a href="https://all-letters.ru/" target="_blank">Письма, благодарности, поздравления </a></p>
-            <p><a href="https://qr-generator.ru/" target="_blank">QR-Generator - Генератор QR-кодов онлайн</a></p>
+            <p class="mb-2">
+              <a href="https://all-letters.ru/" target="_blank">Письма, благодарности, поздравления </a>
+            </p>
+            <p class="mb-2">
+              <a href="https://qr-generator.ru/" target="_blank">QR-Generator - Генератор QR-кодов онлайн</a>
+            </p>
+            <p class="mb-2">
+              <a href="https://qr-board.ru/" target="_blank">QR-Board - Доска QR-объявлений</a>
+            </p>
           </v-col>
         </v-row>
       </v-footer>
